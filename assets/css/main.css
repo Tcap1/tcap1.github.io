@@ -8,7 +8,7 @@
 .pfeil{
     position: absolute;
     top: 1300%;
-    left: 500%;
+    left: 10%;
     transform: translate(-50%,-50%);
 }
 .pfeil span{
