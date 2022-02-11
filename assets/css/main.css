@@ -5,7 +5,10 @@
     font-weight:900;
     font-style:normal
 }
-
+#Logo{
+    font-family: Georgia;
+    font-style: normal;
+}
 @font-face {
     font-family:'Montserrat';
     src:url("fonts/Montserrat-Bold.eot");
