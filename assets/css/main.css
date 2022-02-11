@@ -211,6 +211,10 @@ body{
     width:100%;
     height:100%
 }
+#llink{
+    color: white;
+    text-decoration: none;
+}
 .device-notification{
     display:none;
     position:fixed;
