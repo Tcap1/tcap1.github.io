@@ -5,6 +5,25 @@
     font-weight:900;
     font-style:normal
 }
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+.box {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+    background: #0c0c0c;
+    box-sizing: border-box;
+}
+.box1 {
+
+    width: 33.33333%;
+    padding: 20px;
+    background: #0c0c0c;
+    box-sizing: border-box;
+}
 .pfeil{
     position: absolute;
     top: 500%;
