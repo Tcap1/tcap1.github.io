@@ -11,8 +11,85 @@
         max-width: 100%;
         height: auto;
     }
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  #waviy {
+    position: relative;
+  }
+  #waviy span {
+    position: relative;
+    display: inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @-webkit-keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
 </style>
-<body class="w3-white">
+
+<body onload="myFunction()" style="margin:0;">
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div id="waviy"> 
+    <span style="--i:1">T</span>
+   <span style="--i:2">A</span>
+   <span style="--i:3">I</span>
+   <span style="--i:4">N</span>
+   <span style="--i:5">R</span>
+   <span style="--i:6">I</span>
+   <span style="--i:7">M</span>
+   <span style="--i:8">.</span>
+</div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
 <!-- w3-content defines a container for fixed size centered content
                        and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
@@ -91,7 +168,19 @@
     <div class="box"><a href="WIDERRUFSBELEHRUNG.html">WIDERRUFSBELEHRUNG</a></div>
     <div class="box"><a href="DATENSCHUTZ.html">DATENSCHUTZ</a></div>
 </footer>
-
+ </div>
+ <script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 3000);
+    }
+    
+    function showPage() {
+      document.getElementById("waviy").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    </script>
 </body>
 </html>
 

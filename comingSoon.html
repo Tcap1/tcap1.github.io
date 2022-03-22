@@ -14,23 +14,113 @@
         background-position: bottom;
         background-size: cover;
     }
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  #waviy {
+    position: relative;
+  }
+  #waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @-webkit-keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
+  .button {
+  border: none;
+  color: rgb(37, 37, 37);
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: white;} /* Green */
 </style>
-<body>
+<body onload="myFunction()" style="margin:0;">
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-    <div class="w3-display-topleft w3-padding-large w3-xlarge">
-        <h1 style="text-align: left"><a href="index.html" style="text-decoration: none"><p style="font-family: Georgia">TAINRIM.</p></a></h1>
-        <a href="assets/img/tainrim1.png"></a>
+    <div id="waviy"> 
+        <span style="--i:1">T</span>
+       <span style="--i:2">A</span>
+       <span style="--i:3">I</span>
+       <span style="--i:4">N</span>
+       <span style="--i:5">R</span>
+       <span style="--i:6">I</span>
+       <span style="--i:7">M</span>
+       <span style="--i:8">.</span>
     </div>
-    <div class="w3-display-middle">
 
-        <hr class="w3-border-grey" style="margin:auto;width:40%">
-
+   
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+        <button class="button button1">Zurück</button>
+      <img src="assets/img/comingSoon_TMService_logo.png" style="width: max-width;">
     </div>
-    <div class="w3-display-bottomleft w3-padding-large">
 
-    </div>
-</div>
 
+    <script>
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+        }
+        
+        function showPage() {
+          document.getElementById("waviy").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+        </script>
 </body>
 </html>

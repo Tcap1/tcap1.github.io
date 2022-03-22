@@ -16,8 +16,21 @@
     }
   </style>
 </head>
-<body>
+<body onload="myFunction()" style="margin:0;">
+  <div id="waviy" style="text-align: center;"> 
+   <span style="--i:1">T</span>
+   <span style="--i:2">A</span>
+   <span style="--i:3">I</span>
+   <span style="--i:4">N</span>
+   <span style="--i:5">R</span>
+   <span style="--i:6">I</span>
+   <span style="--i:7">M</span>
+   <span style="--i:8">.</span>
+   <p>FOR YOU NOT FOR EVERYONE</p>
+</div>
 
+<!-- LOADER -->
+<div style="display:none;" id="myDiv" class="animate-bottom">
 <!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
   <a class="header--logo" href="index.html">
@@ -195,8 +208,21 @@
   </ul>
 </div>
 
+
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')
+  var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 3000);
+    }
+    
+    function showPage() {
+      document.getElementById("waviy").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+}</script>
 <script src="assets/js/functions-min.js"></script>
 </body>
 </html>
